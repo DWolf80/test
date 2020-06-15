@@ -1,0 +1,8 @@
+改动：
+增加了Enemy类、Selection类、Start类、Structure类、Stationparent防御站父类、Stationpit防御站坑类
+以及四个防御站子类：StationOne,StationTwo,StationThree,StationFour
+
+设置了不同防御站和敌舰的属性，敌舰根据不同关卡沿不同路径运动
+
+不小心把mainwindow删了。。。所以现在还是不能运行的qwq可不可以过几天补好了再传到git上...
+系统好像出了什么问题一直提交不成功所以超过时间了qwq
