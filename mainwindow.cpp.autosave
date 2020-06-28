@@ -1,5 +1,4 @@
 #include <bits/stdc++.h> //简单粗暴万能头
-#include <cmath>
 #include "mainwindow.h"
 #include <QPainter>
 #include <QPixmap>
@@ -63,7 +62,6 @@ MainWindow::MainWindow(int LevelNum):LevelNum(LevelNum){
     winlable->setFont(QFont("黑体",120));
     winlable->move(180,180);
     winlable->hide();
-    winlable->setStyleSheet("color:white");
 
     //防御站攻击范围显示状态按钮
      QPushButton* distancerange=new QPushButton(this);
@@ -247,9 +245,9 @@ void MainWindow::IronEnemProgDefa(d **Route1, d **Route2, d *start, int *PathLen
     }
     if(counter>80 && EnemyVec.empty()){
         winlable->show();
+        counter++;
         update();
     }
-    counter++;
 }
     //绘制地图
     void MainWindow::DrawMap(QPainter &painter){

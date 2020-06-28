@@ -6,7 +6,7 @@
 class Selection //选择框
 {
 public:
-    Selection(QString Path,int width=250,int height=250);
+    Selection(QString Path,int width=275,int height=275);
     int GetX() const; //获取横坐标
     int GetY() const; //获取纵坐标
     int GetWidth() const; //获取宽度
@@ -18,7 +18,7 @@ public:
     Subbut*GetSelSubBut(); //获取子按钮结构数组
 
 private:
-    bool display= false; //不显示
+    bool display= false; //显示状态
     const int swidth,sheight; //大小
     int sx=0,sy=0; //确定位置：左上角坐标
     QString SelecImgPath; //选择框图片路径

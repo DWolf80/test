@@ -37,19 +37,19 @@ Subbut* Selection::GetSelSubBut(){
 } //获取子按钮结构数组
 
 void Selection::ChooseStation(int x, int y){
-    sx=x-100;
-    sy=y-100; //选择框位置
-    SubBut[0].SubX=sx+120;
-    SubBut[0].SubY=sy+20;
-    SubBut[0].SubImgPath=QString("");
-    SubBut[1].SubX=sx+20;
-    SubBut[1].SubY=sy+120;
-    SubBut[1].SubImgPath=QString("");
-    SubBut[2].SubX=sx+200;
-    SubBut[2].SubY=sy+120;
-    SubBut[2].SubImgPath=QString("");
-    SubBut[3].SubX=sx+120;
-    SubBut[3].SubY=sy+200;
-    SubBut[3].SubImgPath=QString(""); //子按钮位置
+    sx=x-95;
+    sy=y-95; //选择框位置
+    SubBut[0].SubX=sx+106;
+    SubBut[0].SubY=sy+14;
+    SubBut[0].SubImgPath=QString(":/BuyStation1.png");
+    SubBut[1].SubX=sx+14;
+    SubBut[1].SubY=sy+106;
+    SubBut[1].SubImgPath=QString(":/BuyStation2.png");
+    SubBut[2].SubX=sx+202;
+    SubBut[2].SubY=sy+106;
+    SubBut[2].SubImgPath=QString(":/BuyStation3.png");
+    SubBut[3].SubX=sx+106;
+    SubBut[3].SubY=sy+190;
+    SubBut[3].SubImgPath=QString(":/BuyStation4.png"); //子按钮位置
     display=true; //显示
 }

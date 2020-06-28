@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>BackGround.jpg</file>
+        <file>Base1.png</file>
+        <file>Base2.png</file>
+        <file>Base3.png</file>
+        <file>Base4.png</file>
+        <file>Block.jpg</file>
+        <file>Bullet1.png</file>
+        <file>Bullet2.png</file>
+        <file>Bullet3.png</file>
+        <file>Bullet4.png</file>
+        <file>BuyStation1.png</file>
+        <file>BuyStation2.png</file>
+        <file>BuyStation3.png</file>
+        <file>BuyStation4.png</file>
+        <file>Enemy1.png</file>
+        <file>Enemy2.png</file>
+        <file>Enemy3.png</file>
+        <file>Enemy4.png</file>
+        <file>Enemy5.png</file>
+        <file>Explosion.png</file>
+        <file>Home.png</file>
+        <file>MainStation.png</file>
+        <file>Station1.png</file>
+        <file>Station2.png</file>
+        <file>Station3.png</file>
+        <file>Route.jpg</file>
+        <file>Selection.png</file>
+        <file>Upgrade.png</file>
+        <file>Back.png</file>
+        <file>Back1.jpg</file>
+        <file>Back2.jpg</file>
+        <file>2.jpg</file>
+        <file>Back0.jpg</file>
+    </qresource>
+</RCC>

@@ -4,7 +4,7 @@ int Stationparent::GetX() const{
     return sx;
 } //获取横坐标
 
-int Stationparent::Gety() const{
+int Stationparent::GetY() const{
     return sy;
 } //获取纵坐标
 
@@ -19,6 +19,10 @@ int Stationparent::GetHeight() const{
 int Stationparent::GetAngle() const{
     return Angle;
 } //获取角度
+
+int Stationparent::GetAttack() const{
+    return Attack;
+}
 
 int Stationparent::GetRange() const{
     return Range;
@@ -72,8 +76,8 @@ void Stationparent::SetWidthHeight(int width, int height){
     this->width=width;this->height=height;
 } //设置防御战高度宽度
 
-void Stationparent::SetBulletWidthHeight(int bulwidth, int bulheight){
-    Bullwidth=bulwidth;Bullheight=bulheight;
+void Stationparent::SetBulletWidthHeight(int width, int height){
+    Bullwidth=width;Bullheight=height;
 } //设置子弹高度宽度
 
 void Stationparent::SetExplRangeWidthHeight(int exwidth, int exheight){
@@ -82,9 +86,9 @@ void Stationparent::SetExplRangeWidthHeight(int exwidth, int exheight){
 
 void Stationparent::NewBullet(){ //生产子弹函数
     Counter++;
-    if(Counter<10 || goal!=0) return; //计数器达到一定数值+目标敌舰不为空
-    Bullet*bullet=new Bullet(d(UpLeftX+50,UpLeftY+50)); //插入子弹
-    bullet->dd.x=UpLeftX+50,bullet->dd.y=UpLeftY+50;
+    if(Counter<7 && goal!=0) return; //计数器达到一定数值+目标敌舰不为空
+    Bullet*bullet=new Bullet(d(UpLeftX+40,UpLeftY+40)); //插入子弹
+    bullet->dd.x=UpLeftX+40,bullet->dd.y=UpLeftY+40;
     if((!(goal->GetX()-bullet->dd.x))){
         delete  bullet;
         bullet =NULL;
@@ -92,10 +96,10 @@ void Stationparent::NewBullet(){ //生产子弹函数
     }
     bullet->p=(goal->GetY()-bullet->dd.y)/(goal->GetX()-bullet->dd.x);
     bullet->q=goal->GetY()-goal->GetX()*bullet->p;
-    bullet->dd.x=UpLeftX+50;
-    bullet->dd.y=UpLeftY+50;
+    bullet->dd.x=UpLeftX+40;
+    bullet->dd.y=UpLeftY+40;
     BulletVec.push_back(bullet); //把子弹放入数组中
-    if(goal->GetX()<=UpLeftX+50) bullet->direction=true; //判断子弹运动方向是否正确
+    if(goal->GetX()<=UpLeftX+40) bullet->direction=true; //判断子弹运动方向是否正确
     Occasion:
     Counter=0; //重置计数器
 }
@@ -107,11 +111,15 @@ void Stationparent::BulletMove(){ //子弹移动函数
         bul->dd.y=bul->p*bul->dd.x+bul->q; //根据子弹移动方向改变子弹坐标
       }
     for(auto bul=BulletVec.begin();bul!=BulletVec.end();bul++)
-        if((*bul)->dd.x>1200 || (*bul)->dd.x<0 || (*bul)->dd.y>800 || (*bul)->dd.y<0){
+        if((*bul)->dd.x>1040 || (*bul)->dd.x<0 || (*bul)->dd.y>640 || (*bul)->dd.y<0){
             delete bul;
             BulletVec.erase(bul);
             break;
-        }
+        } //遍历，删除越界子弹
+}
+
+Enemy*Stationparent::GetGoalsEnemy() const{
+    return goal;
 }
 
 QString Stationparent::GetBaseImgPath() const{

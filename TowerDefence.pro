@@ -1,7 +1,7 @@
 QT       += core gui
 QT       += multimedia multimediawidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+QT+=widgets
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -17,9 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Enemy.cpp \
+    MainStation.cpp \
     Selection.cpp \
-    Start.cpp \
-    StationFour.cpp \
     StationOne.cpp \
     StationThree.cpp \
     StationTwo.cpp \
@@ -27,28 +26,24 @@ SOURCES += \
     Stationpit.cpp \
     Structure.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    startfrom.cpp
 
 HEADERS += \
     Enemy.h \
+    MainStation.h \
     Selection.h \
-    Start.h \
-    StationFour.h \
     StationOne.h \
     StationThree.h \
     StationTwo.h \
     Stationparent.h \
     Stationpit.h \
     Structure.h \
-    mainwindow.h
+    mainwindow.h \
+    startfrom.h
 
 FORMS += \
-    mainwindow.ui \
-    start.ui
+    startfrom.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
-RESOURCES +=
+RESOURCES += \
+    images.qrc

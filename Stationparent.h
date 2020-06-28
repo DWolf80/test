@@ -22,7 +22,7 @@ protected:
     QString BullPath; //子弹图片路径
 public:
     int GetX() const; //获取横坐标
-    int Gety() const; //获取纵坐标
+    int GetY() const; //获取纵坐标
     int GetWidth() const; //获取宽度
     int GetHeight() const; //获取高度
     int GetAngle() const; //获取旋转角度
