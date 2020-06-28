@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>2.jpg</file>
+        <file>1.png</file>
+        <file>3.jpg</file>
+        <file>4.jpg</file>
+        <file>5.jpg</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>Giihaha - 三体-地球往事.mp3</file>
+        <file>Giihaha - 三体-黑暗森林.mp3</file>
+        <file>佐桥俊彦 (さはし としひこ) - 敵の猛攻 (敌人的猛攻).mp3</file>
+    </qresource>
+</RCC>

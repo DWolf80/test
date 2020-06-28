@@ -9,27 +9,27 @@ Enemy::Enemy(d**point,int pointnum,int x,int y,int eid):
         case 1: //战舰1
           hp=100;
           ewidth=65,eheight=65;
-          ImgPath=""; //战舰图片途径
+          ImgPath=":/Enemy1.png"; //战舰图片途径
           break;
         case 2: //战舰2
           hp=120;
           ewidth=85,eheight=85;
-          ImgPath="";
+          ImgPath=":/Enemy2.png";
           break;
         case 3: //战舰3
           hp=150;
           ewidth=100,eheight=100;
-          ImgPath="";
+          ImgPath=":/Enemy3.png";
           break;
         case 4: //战舰4
           hp=200;
           ewidth=120,eheight=120;
-          ImgPath="";
+          ImgPath=":/Enemy4.png";
           break;
         case 5: //战舰5
-          hp=300;
+          hp=500;
           ewidth=150,eheight=150;
-          ImgPath="";
+          ImgPath=":/Enemy5.png";
           break;
         default:
           break;
@@ -64,25 +64,24 @@ QString Enemy::GetImgPath() const{
 bool Enemy::Move(){ //敌舰按照路径点运动
     if(Route.empty())
         return true;
-    if(Route.p(0)->x==ex && Route.p(0)->y==ey){ //敌舰坐标与设定路径点坐标重合，删除此路径点
-        Route.erase(Route.begin());
-        return false;
-    }
-    if(Route.p(0)->y > ey){ //路径点在敌舰坐标下侧时，向下移动
-        ey+=espeed;
-        return false;
-    }
-    if(Route.p(0)->y < ey){ //向上移动
-        ey-=espeed;
-        return false;
-    }
-    if(Route.p(0)->x < ex){ //向左移动
-        ex-=espeed;
-        return false;
-    }
-    if(Route.p(0)->x > ex){ //向右移动
+    if(ex<Route.at(0)->x){ //路径点在敌舰坐标点右侧时，向右移动
         ex+=espeed;
         return false;
     }
-
+    if(ex>Route.at(0)->x){ //向左移动
+        ex-=espeed;
+        return false;
+    }
+    if(ey<Route.at(0)->y){ //向下移动
+        ey+=espeed;
+        return false;
+    }
+    if(ey>Route.at(0)->y){ //向上移动
+        ey-=espeed;
+        return false;
+    }
+    if(Route.at(0)->x==ex && Route.at(0)->y==ey){ //敌舰坐标与设定路径点坐标重合，删除此路径点
+        Route.erase(Route.begin());
+    }
+    return false;
 }
